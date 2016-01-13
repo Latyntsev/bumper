@@ -49,7 +49,8 @@ class Bumper {
             NSParagraphStyleAttributeName:paragraph
         ]
         
-        return inputImage.addText(text, intRect: textRect, attributes: textFontAttributes)
+        inputImage = inputImage.addText(text, intRect: textRect, attributes: textFontAttributes)
+        return inputImage
     }
     
     

@@ -10,11 +10,8 @@ import Foundation
 
 var parametres = Parametres()
 
-if let imagePath = parametres.imagesFolderPath {
-    
-    let bumper = Bumper(fontName: parametres.fontName)
-    bumper.make(imagePath, text: parametres.text)
-}
+let bumper = Bumper(fontName: parametres.fontName)
+bumper.make(parametres.imagesFolderPath, text: parametres.text)
 
 
 

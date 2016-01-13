@@ -15,28 +15,25 @@ class Parametres {
     
     private func parseArgument() {
         var setParametersValueHandler: ((value: String) -> Void)?
-        
-        for argument in Process.arguments[1..<Process.arguments.count] {
-            
+        let arguments = Process.arguments
+        for argument in arguments[1..<arguments.count] {
+
             if setParametersValueHandler == nil {
                 
                 switch argument.lowercaseString {
                 case "-path":
                     setParametersValueHandler = {(value) -> Void in
                         self.imagesFolderPath = value
-                        setParametersValueHandler = nil
                     }
                     
                 case "-text":
                     setParametersValueHandler = {(value) -> Void in
-                        self.text = value
-                        setParametersValueHandler = nil
+                        self.text = value.stringByReplacingOccurrencesOfString("\\n", withString: "\n")
                     }
                     
                 case "-fontName":
                     setParametersValueHandler = {(value) -> Void in
                         self.fontName = value
-                        setParametersValueHandler = nil
                     }
                     
                 default:
@@ -46,6 +43,7 @@ class Parametres {
             } else {
                 if (setParametersValueHandler != nil) {
                     setParametersValueHandler!(value: argument)
+                    setParametersValueHandler = nil
                 }
             }
         }
