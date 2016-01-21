@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0C0983491C2053CF00EF93CF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0983481C2053CF00EF93CF /* main.swift */; };
 		0C3637821C3BD529005AA680 /* NSImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3637811C3BD529005AA680 /* NSImage+extension.swift */; };
+		0C4A5C1C1C4523F200DD7722 /* Bumper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4A5C1B1C4523F200DD7722 /* Bumper.swift */; };
+		0C4A5C1E1C45328500DD7722 /* Parametres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4A5C1D1C45328500DD7722 /* Parametres.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +29,8 @@
 		0C0983451C2053CF00EF93CF /* bumper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = bumper; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C0983481C2053CF00EF93CF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		0C3637811C3BD529005AA680 /* NSImage+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImage+extension.swift"; sourceTree = "<group>"; };
+		0C4A5C1B1C4523F200DD7722 /* Bumper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bumper.swift; sourceTree = "<group>"; };
+		0C4A5C1D1C45328500DD7722 /* Parametres.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parametres.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				0C0983481C2053CF00EF93CF /* main.swift */,
+				0C4A5C1B1C4523F200DD7722 /* Bumper.swift */,
+				0C4A5C1D1C45328500DD7722 /* Parametres.swift */,
 				0C3637811C3BD529005AA680 /* NSImage+extension.swift */,
 			);
 			path = bumper;
@@ -123,7 +129,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C3637821C3BD529005AA680 /* NSImage+extension.swift in Sources */,
+				0C4A5C1C1C4523F200DD7722 /* Bumper.swift in Sources */,
 				0C0983491C2053CF00EF93CF /* main.swift in Sources */,
+				0C4A5C1E1C45328500DD7722 /* Parametres.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
