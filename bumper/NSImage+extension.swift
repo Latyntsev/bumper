@@ -34,24 +34,28 @@ extension NSImage {
         return rep
     }
     
-    func addText(text: String, intRect:NSRect, attributes: [String:NSObject]) -> NSImage {
+    func addText(text: String, inRect:NSRect, attributes: [String:NSObject]) -> NSImage {
+        
+        
+        let size = text.sizeWithAttributes(attributes)
+        let rect = CGRectInset(inRect, (inRect.width - size.width) / 2, (inRect.height - size.height) / 2)
+        
         
         let textImage = NSImage.init(size: self.size)
-        
         textImage.lockFocus()
         
         self.drawInRect(CGRectMake(0, 0, self.size.width, self.size.height))
-        text.drawInRect(intRect, withAttributes: attributes)
+        text.drawInRect(rect, withAttributes: attributes)
+        
         textImage.unlockFocus()
         
         return textImage
     }
     
-    func addBlure(radisu: CGFloat)->NSImage {
+    func addBlure(rect:NSRect, radisu: CGFloat)->NSImage {
         
-        var drawRect = CGRectMake(0, 0, self.size.width, self.size.height)
+        let drawRect = CGRectMake(0, 0, self.size.width, self.size.height)
         let inputImage = self.unscaledBitmapImageRep()
-        
         
         let filter = CIFilter(name: "CIGaussianBlur")!
         filter.setDefaults()
@@ -62,13 +66,10 @@ extension NSImage {
         
         let blurredImage = NSImage.init(size: self.size)
         
-        
         blurredImage.lockFocus()
-        inputImage.drawInRect(drawRect)
         
-        
-        drawRect.size = CGSizeMake(drawRect.size.width, drawRect.size.height / 2)
-        outputImage.drawInRect(drawRect, fromRect: drawRect, operation: .CompositeSourceOver, fraction: 1)
+        self.drawInRect(drawRect)
+        outputImage.drawInRect(rect, fromRect: rect, operation: .CompositeSourceOver, fraction: 1)
         
         blurredImage.unlockFocus()
         

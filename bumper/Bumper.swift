@@ -17,42 +17,40 @@ class Bumper {
     }
     
     func makeOnImage(image:NSImage, text: String) -> NSImage {
-        
+
+        let blureConst: CGFloat = 0.03
         let source = CGImageSourceCreateWithData(image.TIFFRepresentation!, [:])
         let maskRef = CGImageSourceCreateImageAtIndex(source!, 0, [:])!
         var inputImage = NSImage(CGImage: maskRef, size: CGSizeMake(0,0))
         
-        let radisuLow = inputImage.size.width *  0.01
-        let radisu = inputImage.size.width *  0.03
-        
-        let textRect = CGRectMake(0, 0, inputImage.size.width, inputImage.size.height / 2.2)
-        let font = NSFont(name: fontName, size: inputImage.size.width * 0.18)!
+        let fontSize = inputImage.size.width * 0.17
+        let textRect = CGRectMake(0, 0, inputImage.size.width, inputImage.size.height / 2)
         let paragraph = NSMutableParagraphStyle()
         paragraph.alignment = .Center
-        paragraph.maximumLineHeight = font.pointSize
+        paragraph.maximumLineHeight = fontSize
         
-        
-        inputImage = inputImage.addBlure(radisu)
-        
-        var textFontAttributes = [
-            NSFontAttributeName:font,
+        let backgroundTextFontAttributes = [
+            NSFontAttributeName:NSFont(name: fontName, size: fontSize)!,
             NSForegroundColorAttributeName: NSColor.blackColor(),
             NSParagraphStyleAttributeName:paragraph
         ]
-        inputImage = inputImage.addText(text, intRect: textRect , attributes: textFontAttributes)
-        inputImage = inputImage.addBlure(radisuLow)
         
-        
-        textFontAttributes = [
-            NSFontAttributeName: font,
+        let textFontAttributes = [
+            NSFontAttributeName: NSFont(name: fontName, size: fontSize)!,
             NSForegroundColorAttributeName: NSColor.whiteColor(),
             NSParagraphStyleAttributeName:paragraph
         ]
         
-        inputImage = inputImage.addText(text, intRect: textRect, attributes: textFontAttributes)
+        let radisuLow = inputImage.size.width * (blureConst * 0.2)
+        let radisu = inputImage.size.width *  (blureConst * 0.8)
+    
+        inputImage = inputImage.addBlure(textRect, radisu:radisu)
+        inputImage = inputImage.addText(text, inRect: textRect , attributes: backgroundTextFontAttributes)
+        inputImage = inputImage.addBlure(textRect, radisu: radisuLow)
+        inputImage = inputImage.addText(text, inRect: textRect, attributes: textFontAttributes)
+        
         return inputImage
     }
-    
     
     func make(imagesFolderPath:String, text: String) {
         let fileManager = NSFileManager.defaultManager()
