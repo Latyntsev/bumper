@@ -1,0 +1,14 @@
+//
+//  bumper-config.xcconfig
+//  bumper
+//
+//  Created by Aleksandr Latyntsev on 1/21/16.
+//  Copyright © 2016 Aleksandr Latyntsev. All rights reserved.
+//
+
+BAMPER_INSTALL_DIR = bin
+BAMPER_INSTALL_ROOT = $(BUILT_PRODUCTS_DIR)
+INSTALL_PATH = $(BAMPER_INSTALL_ROOT)/$(BAMPER_INSTALL_DIR)
+
+DSTROOT = /
+DEPLOYMENT_LOCATION = YES

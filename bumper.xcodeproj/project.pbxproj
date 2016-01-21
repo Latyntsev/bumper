@@ -31,6 +31,7 @@
 		0C3637811C3BD529005AA680 /* NSImage+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImage+extension.swift"; sourceTree = "<group>"; };
 		0C4A5C1B1C4523F200DD7722 /* Bumper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bumper.swift; sourceTree = "<group>"; };
 		0C4A5C1D1C45328500DD7722 /* Parametres.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parametres.swift; sourceTree = "<group>"; };
+		0C55F3D51C50EDA30088FE2E /* bumper-config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "bumper-config.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +68,7 @@
 				0C4A5C1B1C4523F200DD7722 /* Bumper.swift */,
 				0C4A5C1D1C45328500DD7722 /* Parametres.swift */,
 				0C3637811C3BD529005AA680 /* NSImage+extension.swift */,
+				0C55F3D51C50EDA30088FE2E /* bumper-config.xcconfig */,
 			);
 			path = bumper;
 			sourceTree = "<group>";
@@ -140,6 +142,7 @@
 /* Begin XCBuildConfiguration section */
 		0C09834A1C2053CF00EF93CF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C55F3D51C50EDA30088FE2E /* bumper-config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -184,6 +187,7 @@
 		};
 		0C09834B1C2053CF00EF93CF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C55F3D51C50EDA30088FE2E /* bumper-config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
