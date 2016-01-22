@@ -18,7 +18,7 @@ func printHelp() {
         "'bumper' - command line tool for adding two short lines of text over the icon",
         "",
         "Options:",
-        "  -path \tPath to a folder with images. All *.png files there will be updated, exept of subfolders",
+        "  -path \tPath to a folder with images. All *.png files there will be updated, except of subfolders",
         "  -text \tThe text that should be added on the icon, You can use '\\n' as a line separator. You can use maximum 2 lines and no more then 9 characters per line",
         "  -help --h\tShow this information",
         "  -version --v\tShow version number"
