@@ -9,9 +9,11 @@
 import Foundation
 
 class Parametres {
-    var imagesFolderPath: String!
+    var imagesFolderPath: String?
     var text = ""
     var fontName = "Menlo Regular"
+    var help = false
+    var showVersion = false
     
     private func parseArgument() {
         var setParametersValueHandler: ((value: String) -> Void)?
@@ -21,6 +23,7 @@ class Parametres {
             if setParametersValueHandler == nil {
                 
                 switch argument.lowercaseString {
+                    
                 case "-path":
                     setParametersValueHandler = {(value) -> Void in
                         self.imagesFolderPath = value
@@ -35,6 +38,12 @@ class Parametres {
                     setParametersValueHandler = {(value) -> Void in
                         self.fontName = value
                     }
+                    
+                case "-help", "--h":
+                    self.help = true
+                    
+                case "-version", "--v":
+                    self.showVersion = true
                     
                 default:
                     break
