@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  Bumper
+//
+//  Created by Aleksandr Latyntsev on 1/22/16.
+//  Copyright © 2016 Aleksandr Latyntsev. All rights reserved.
+//
+
+
+ENVIRONMENT_NAME = Live
+BUMPER = true

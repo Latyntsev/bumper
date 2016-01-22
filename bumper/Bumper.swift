@@ -64,6 +64,7 @@ class Bumper {
                 if let inputImage = NSImage.init(contentsOfFile: pathToImage) {
                     let outputImage = makeOnImage(inputImage, text:text)
                     outputImage.saveImage(pathToImage)
+                    print("Done \(element)")
                 }
             }
         }
