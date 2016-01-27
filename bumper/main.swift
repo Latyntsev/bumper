@@ -15,7 +15,7 @@ let parametres = Parametres()
 func printHelp() {
     let help = [
         "Bumper \(version)",
-        "'bumper' - command line tool for adding two short lines of text over the icon",
+        "'bumper' - command-line tool for adding two short lines of text over the icon",
         "",
         "Options:",
         "  -path \tPath to a folder with images. All *.png files there will be updated, except of subfolders",
